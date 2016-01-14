@@ -12,7 +12,7 @@ body {
     border-bottom: 1px solid #fff;
 }
 .section_header  {
-    height: 150px;
+    height: 120px;
     background: url("../images/section-header.png") center center no-repeat;
 }
 .section_header  h1 {
@@ -171,17 +171,17 @@ body {
     margin-top: 70px;
     min-height: 425px;
     background: #eeeeee;
-    box-shadow: inset 0px 0px 0px 1px rgba(210, 210, 210, 1);    
+    box-shadow: inset 0px 0px 0px 1px rgba(210, 210, 210, 1);
     position: relative;
 }
 #templatemo_upcomming_event .event_box ul {
-    list-style: none;    
-    padding: 25px 30px 15px 30px;    
-    margin: 0;    
+    list-style: none;
+    padding: 25px 30px 15px 30px;
+    margin: 0;
 }
 #templatemo_upcomming_event .event_box ul li {
-    list-style: none;    
-    padding: 10px 0 10px 0 ;    
+    list-style: none;
+    padding: 10px 0 10px 0 ;
     margin: 0;
     font-size: 14px;
     line-height: 30px;
@@ -191,7 +191,7 @@ body {
     border-top: 0px ;
 }
 #templatemo_upcomming_event .event_box ul li span{
-    padding-right: 15px;    
+    padding-right: 15px;
     color: #35abd9;
 }
 #templatemo_upcomming_event #prev_event_btn ,
@@ -308,7 +308,7 @@ body {
 	display: block;
 	border: 2px solid #35a9d8;
     font-size: 32px;
-    color: #35a9d8; 
+    color: #35a9d8;
     width: 100%;
 	padding: 12px 0px;
     text-decoration: none;
@@ -410,7 +410,7 @@ body {
 }
 
 /*  Extra small devices (phones, less than 768px)  */
-@media (max-width: 768px ) { 
+@media (max-width: 768px ) {
     #templatemo_banner_logo h1 {
         font-size: 46px;
         text-align: left;
@@ -430,7 +430,7 @@ body {
     }
 }
 /*  Small devices (tablets, 768px and up)  */
-@media (min-width: 768px ) { 
+@media (min-width: 768px ) {
 
 }
 /*  Medium devices (desktops, 992px and up)  */
@@ -444,4 +444,9 @@ body {
 }
 /*  Large devices (large desktops, 1200px and up)  */
 @media (min-width: 1200px ) {
+}
+
+.img-responsive {
+  width: 425px;
+  height: 225px;
 }
