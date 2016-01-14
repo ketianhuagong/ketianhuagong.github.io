@@ -14,7 +14,7 @@ jQuery(function()
         opacityOnGrid: false,
         imagePath: 'images/'
     });
-    //banner slider height window height 
+    //banner slider height window height
     //(top banner height + logo height + main menu height )
     banner_slider_height = $(window).outerHeight()-285;
     banner_slider_height = (banner_slider_height<540) ? 540 : banner_slider_height;
@@ -54,7 +54,7 @@ jQuery(function()
     jQuery.fn.anchorAnimate = function(settings) {
         settings = jQuery.extend({
             speed : 1100
-        }, settings);	
+        }, settings);
         return this.each(function(){
             var caller = this
             $(caller).click(function (event){
@@ -113,7 +113,7 @@ jQuery(function()
             $("#templatemo_upcomming_event .event_animate_left").css({'left': 0,'opacity':1});
             $("#templatemo_upcomming_event .event_animate_right").css({'left':0,'opacity':1});
         }
-        
+
     });
     //pricing
     $(document).scroll(function(){
@@ -172,49 +172,8 @@ jQuery(function()
         }
     });
 });
-//google map
+
 function initialize(){
-    //define map
-    var map;
-    //lat lng
-    myLatlng = new google.maps.LatLng(16.800000, 96.150000);
-    //define style
-    var styles = [
-        {
-            //set all color
-            featureType: "all",
-            stylers: [{ hue: "#35a9d8" }]
-        },
-        {
-            //hide business
-            featureType: "poi.business",
-            elementType: "labels",
-            stylers: [{ visibility: "off" }]
-        }
-    ];
-    //map options
-    var mapOptions = {
-        zoom: 14,
-        center: myLatlng ,
-        mapTypeControlOptions: {mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']} ,
-        panControl: false , //hide panControl
-        zoomControl: false , //hide zoomControl
-        mapTypeControl: false , //hide mapTypeControl
-        scaleControl: false , //hide scaleControl
-        streetViewControl: false , //hide streetViewControl
-        overviewMapControl: false , //hide overviewMapControl
-    }
-    //adding attribute value
-    map = new google.maps.Map(document.getElementById('templatemo_contact_map'), mapOptions);
-    var styledMap = new google.maps.StyledMapType(styles,{name: "Styled Map"});
-    map.mapTypes.set('map_style', styledMap);
-    map.setMapTypeId('map_style');
-    //add marker
-    var marker = new google.maps.Marker({
-        position: myLatlng,
-        map: map,
-        title: 'Welcome to Yangon'
-    });
 }
-google.maps.event.addDomListener(window, 'load', initialize); 
-google.maps.event.addDomListener(window, 'resize', initialize); 
+google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(window, 'resize', initialize);
