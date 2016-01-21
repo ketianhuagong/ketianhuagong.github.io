@@ -173,6 +173,7 @@ body {
     background: #eeeeee;
     box-shadow: inset 0px 0px 0px 1px rgba(210, 210, 210, 1);
     position: relative;
+    cursor: pointer;
 }
 #templatemo_upcomming_event .event_box ul {
     list-style: none;
