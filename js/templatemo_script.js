@@ -12,7 +12,36 @@ jQuery(function() {
     imagePath: 'images/'
   });
 
-   $(".event_box").flip();
+  var cache = {};
+
+  jQuery.tmpl = function tmpl(str, data) {
+    // Figure out if we're getting a template, or if we need to
+    // load the template - and be sure to cache the result.
+    var fn = !/\W/.test(str) ?
+      cache[str] = cache[str] ||
+      tmpl(document.getElementById(str).innerHTML) :
+
+      // Generate a reusable function that will serve as a template
+      // generator (and which will be cached).
+      new Function("obj",
+        "var p=[],print=function(){p.push.apply(p,arguments);};" +
+
+        // Introduce the data as local variables using with(){}
+        "with(obj){p.push('" +
+
+        // Convert the template into pure JavaScript
+        str
+        .replace(/[\r\t\n]/g, " ")
+        .split("<%").join("\t")
+        .replace(/((^|%>)[^\t]*)'/g, "$1\r")
+        .replace(/\t=(.*?)%>/g, "',$1,'")
+        .split("\t").join("');")
+        .split("%>").join("p.push('")
+        .split("\r").join("\\'") + "');}return p.join('');");
+
+    // Provide some basic currying to the user
+    return data ? fn(data) : fn;
+  };
 
   //banner slider height window height
   //(top banner height + logo height + main menu height )
@@ -155,37 +184,7 @@ jQuery(function() {
     }
 
   });
-  //pricing
-  $(document).scroll(function() {
-    document_top = $(document).scrollTop() - 1000;
-    event_wapper_top = $("#templatemo_pricing").position().top - 1110;
-    if (document_top < event_wapper_top) {
-      degree = (360 / event_wapper_top) * (document_top);
-      event_animate_num = event_wapper_top - document_top;
-      event_animate_alpha = (1 / event_wapper_top) * (document_top);
-      $("#templatemo_pricing .pricing_icon_wapper span").css({
-        '-webkit-transform': 'rotate(' + degree + 'deg)',
-        '-moz-transform': 'rotate(' + degree + 'deg)',
-        '-ms-transform': 'rotate(' + degree + 'deg)',
-        '-o-transform': 'rotate(' + degree + 'deg)',
-        'transform': 'rotate(' + degree + 'deg)',
-      });
-      $("#templatemo_pricing .pricing_icon_wapper").css({
-        'opacity': event_animate_alpha
-      });
-    } else {
-      $("#templatemo_pricing .pricing_icon_wapper span").css({
-        '-webkit-transform': 'rotate(' + 360 + 'deg)',
-        '-moz-transform': 'rotate(' + 360 + 'deg)',
-        '-ms-transform': 'rotate(' + 360 + 'deg)',
-        '-o-transform': 'rotate(' + 360 + 'deg)',
-        'transform': 'rotate(' + 360 + 'deg)',
-      });
-      $("#templatemo_pricing .pricing_icon_wapper").css({
-        'opacity': 1
-      });
-    }
-  });
+
   //blog
   $(document).scroll(function() {
     document_top = $(document).scrollTop() - 2000;
@@ -227,8 +226,13 @@ jQuery(function() {
       });
     }
   });
-});
+  $(".event_box").flip();
 
-function initialize() {}
-google.maps.event.addDomListener(window, 'load', initialize);
-google.maps.event.addDomListener(window, 'resize', initialize);
+  $.getJSON("js/product.json", {}, function(data) {
+    for (var i = 0; i < data.length; i++) {
+      var item = data[i];
+      var it = $($.tmpl("item_tmpl", item)).flip();
+      $("#product_list").append(it);
+    }
+  })
+});

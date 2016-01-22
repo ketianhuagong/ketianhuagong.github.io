@@ -184,15 +184,15 @@ body {
     list-style: none;
     padding: 10px 0 10px 0 ;
     margin: 0;
-    font-size: 14px;
-    line-height: 30px;
+    font-size: 12px;
+    line-height: 16px;
     border-top: 1px solid #e2e2e2;
 }
 #templatemo_upcomming_event .event_box ul li:first-child {
     border-top: 0px ;
 }
 #templatemo_upcomming_event .event_box ul li span{
-    padding-right: 15px;
+    padding-right: 4px;
     color: #35abd9;
 }
 #templatemo_upcomming_event #prev_event_btn ,
@@ -450,4 +450,8 @@ body {
 .img-responsive {
   width: 425px;
   height: 225px;
+}
+
+.title {
+  font-weight: bold;
 }
