@@ -235,4 +235,11 @@ jQuery(function() {
       $("#product_list").append(it);
     }
   })
+  // alert( "\ncssanimations: "+Modernizr.cssanimations
+  // +"\ncsscolumns: "+Modernizr.csscolumns
+  // +"\ncssgradients: "+Modernizr.cssgradients
+  // +"\ncssreflections: "+Modernizr.cssreflections
+  // +"\ncsstransforms: "+Modernizr.csstransforms
+  // +"\ncsstransforms3d: "+Modernizr.csstransforms3d
+  // +"\ncsstransitions: "+Modernizr.csstransitions);
 });

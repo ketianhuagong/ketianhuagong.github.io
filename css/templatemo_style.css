@@ -78,7 +78,7 @@ body {
 #templatemo_banner_logo {
     background-color: #ffffff;
     background-image: url("../images/banner_logo_bg.jpg");
-    height: 135px;
+    height: 85px;
 }
 #templatemo_banner_logo img {
 	float: left;
@@ -139,10 +139,10 @@ body {
     z-index: 1500;
 }
 #templatemo_main_menu .nav-justified li {
-    height: 105px;
+    height: 80px;
 }
 #templatemo_main_menu .nav-justified li a {
-    height: 105px;
+    height: 80px;
     font-size: 24px;
     line-height: 75px;
     color: #000;
@@ -422,6 +422,7 @@ body {
         color: #000000;
         text-align: left;
     }
+
 	#templatemo_pricing .pricing_icon_wapper {
 		margin-bottom: 50px;
 	}
