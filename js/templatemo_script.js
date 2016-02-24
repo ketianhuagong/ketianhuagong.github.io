@@ -230,12 +230,12 @@ jQuery(function() {
 
   $.getJSON("js/product.json", {}, function(data) {
     var str = "";
-    for (var feature in Modernizr) {
-      if (typeof Modernizr[feature] === "boolean") {
-        str += feature + ":" + Modernizr[feature] + "\n";
-      }
-    }
-    alert(str);
+    // for (var feature in Modernizr) {
+    //   if (typeof Modernizr[feature] === "boolean") {
+    //     str += feature + ":" + Modernizr[feature] + "\n";
+    //   }
+    // }
+    //alert(str);
     for (var i = 0; i < data.length; i++) {
       var item = data[i];
       if (Modernizr.csstransitions) {
