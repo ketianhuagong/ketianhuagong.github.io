@@ -231,8 +231,16 @@ jQuery(function() {
   $.getJSON("js/product.json", {}, function(data) {
     for (var i = 0; i < data.length; i++) {
       var item = data[i];
-      var it = $($.tmpl("item_tmpl", item)).flip();
-      $("#product_list").append(it);
+      if(Modernizr.csstransitions) {
+        var it = $($.tmpl("item_tmpl", item)).flip();
+        $("#product_list").append(it);
+      } else {
+        var it = $($.tmpl("item_tmpl", item));
+        $(".event_box").css("min-height", "1100px");
+        $("#product_list").append(it);
+      }
+
+
     }
   })
   // alert( "\ncssanimations: "+Modernizr.cssanimations

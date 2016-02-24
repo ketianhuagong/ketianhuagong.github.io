@@ -169,7 +169,7 @@ body {
 }
 #templatemo_upcomming_event .event_box {
     margin-top: 70px;
-    min-height: 425px;
+    min-height: 625px;
     background: #eeeeee;
     box-shadow: inset 0px 0px 0px 1px rgba(210, 210, 210, 1);
     position: relative;
